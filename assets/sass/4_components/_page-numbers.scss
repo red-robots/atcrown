@@ -1,0 +1,43 @@
+.page-numbers-nav {
+  display: block;
+  text-align: center;
+
+  .page-numbers {
+    display: inline-block;
+    border: 1px solid $color-gray;
+    color: $color-blue;
+    text-align: center;
+    width: 30px;
+    line-height: 30px;
+    margin-left: 3px;
+    margin-right: 3px;
+    text-decoration: none;
+    font-weight: 600;
+
+    &.prev,
+    &.next {
+      border-color: transparent;
+      width: auto;
+    }
+
+    &.next::after {
+      content: url('../images/icons/arrow-blue-short-right.svg');
+      display: inline-block;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+
+    &.prev::before {
+      content: url('../images/icons/arrow-blue-short-left.svg');
+      display: inline-block;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    &.current {
+      color: $white;
+      background-color: $color-blue;
+      border-color: $color-blue;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.single-post {
+  #container {
+    @include center-width;
+    max-width: 1000px;
+  }
+  @include breakpoint(medium) {
+    #container {
+      display: flex;
+    }
+    #content {
+      flex-grow: 1;
+    }
+    #aside {
+      width: 260px;
+    }
+  }
+
+}

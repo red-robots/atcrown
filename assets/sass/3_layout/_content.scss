@@ -1,0 +1,121 @@
+@mixin content-width {
+  @include center-width(1000px, 40px);
+}
+
+.body-content {
+  overflow: hidden;
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6,
+  p,
+  > .wp-block-columns,
+  > ul {
+    @include content-width;
+  }
+
+  > iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  > h1 {
+    margin-top: calc(2 * $line-height-content);
+    margin-bottom: $line-height-content;
+    font-family: $font-family-heading;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 60px;
+    letter-spacing: 2.46px;
+  }
+
+  > h2 {
+    margin-top: calc($line-height-content * 2);
+    margin-bottom: calc(.5 * $line-height-content);
+    font-weight: 700;
+    color: $color-red;
+    font-size: 32px;
+    line-height: 43px;
+  }
+
+  > h3 {
+    margin-top: $line-height-content;
+    margin-bottom: calc(.5 * $line-height-content);
+    color: $color-red;
+    font-size: 34px;
+    line-height: 41px;
+  }
+
+  > h4 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: calc(.5 * $line-height-content);
+  }
+
+  > h5 {
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  > h6 {
+    font-size: 20px;
+    line-height: 38px;
+  }
+
+  > h7 {
+    font-size: 12px;
+    line-height: 16px;
+    color: $color-red;
+    letter-spacing: -0.08px;
+  }
+
+  > ul {
+    margin-bottom: $line-height-content;
+    padding-left: 40px;
+
+    > li {
+      line-height: $line-height-content;
+      display: block;
+      margin-bottom: calc($line-height-content / 2);
+      list-style-type: circle;
+    }
+  }
+
+  p {
+    line-height: $line-height-content;
+    font-weight: 300;
+    margin-bottom: $line-height-content;
+  }
+
+  .aligncenter {
+    text-align: center;
+  }
+}
+
+.page {
+  &__content {
+    background: $white;
+    position: relative;
+    z-index: 2;
+    min-height: 1200px;
+    padding-top: $header-height-mobile;
+    padding-bottom: 90px;
+
+    @include breakpoint(medium) {
+      padding-top: $header-height-desktop;
+    }
+  }
+
+  &__footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+}
+

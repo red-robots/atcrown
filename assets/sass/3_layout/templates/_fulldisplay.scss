@@ -1,0 +1,115 @@
+.page-template-template-full-screen-message {
+  background: $color-red;
+  position: relative;
+  margin: 0;
+  height: 100vh;
+  min-height: 600px;
+
+  .notice {
+    text-align: center;
+    margin-bottom: 10px;
+    position: static;
+  }
+  .page__header,
+  .page__footer {
+    display: none;
+  }
+  .page__content {
+    background: $color-red;
+    height: 100vh;
+    padding-top: 0;
+    min-height: 0;
+  }
+
+  .fulldisplay {
+    text-align: center;
+    padding: 30px;
+    @include breakpoint(medium) {
+      min-width: map-get($breakpoints, medium);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0;
+    }
+  }
+
+  .fulldisplay__logo {
+    margin-bottom: 20px;
+  }
+
+  .fulldisplay__heading {
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: $white;
+
+    @include breakpoint(medium) {
+      font-size: 64px;
+      line-height: 63px;
+      letter-spacing: -0.4px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .fulldisplay__subheading {
+    color: $color-light-blue;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    @include breakpoint(medium) {
+      line-height: 41px;
+      font-size: 34px;
+
+      margin-bottom: 40px;
+    }
+
+    a {
+      color: $color-light-blue;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .fulldisplay__cta {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 40px;
+    a {
+      color: $font-color-base;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    @include breakpoint(medium) {
+      margin-bottom: 80px;
+    }
+  }
+
+  .fulldisplay__footer-heading {
+    font-weight: 400;
+    color: $white;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+
+
+  .contact-form__form {
+    text-align: center;
+  }
+
+  .email-capture__input {
+    margin-bottom: 15px;
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+  }
+}

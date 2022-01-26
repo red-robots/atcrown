@@ -1,0 +1,21 @@
+.navheader {
+  @include set-page-width();
+  border-bottom: 1px solid $color-input-border;
+  margin: 0 auto $line-height-base auto;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__actions {
+    border-top: 1px solid $color-input-border;
+    display: block;
+    background: linear-gradient($color-shadow, #fff);
+
+    a {
+      display: inline-block;
+      padding: padding();
+      background: #fff;
+    }
+  }
+}

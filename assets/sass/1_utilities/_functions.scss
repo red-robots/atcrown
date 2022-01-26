@@ -1,0 +1,34 @@
+@use "sass:math";
+
+@function padding($size: base, $dir: both) {
+  $sizes: map-get($padding, $size);
+
+  @if ($dir == both) {
+    @return unquote("#{map-get($sizes, v)} #{map-get($sizes, h)}");
+  }
+
+  @return map-get($sizes, $dir);
+}
+
+@function sqrt($r) {
+  $x0: 1;
+  $x1: $x0;
+
+  @for $i from 1 through 10 {
+    $x1: $x0 - calc(($x0 * $x0 - abs($r)) / (2 * $x0));
+    $x0: $x1;
+  }
+
+  @return $x1;
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}

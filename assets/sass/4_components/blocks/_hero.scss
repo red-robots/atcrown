@@ -1,0 +1,161 @@
+.countdown {
+  background: $color-blue;
+  text-align: center;
+  color: $white;
+  padding: 10px 40px 20px 40px;
+  box-sizing: border-box;
+
+  &__header {
+    margin-bottom: 10px;
+  }
+  &__heading {
+    font-size: 10px;
+  }
+  &__content {
+    display: flex;
+  }
+  &__el {
+    flex-grow: 1;
+    position: relative;
+    &::after {
+      content: ':';
+      color: $boulder;
+      display: block;
+      font-weight: 500;
+      font-size: 34px;
+      line-height: 45px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &:last-child {
+      &::after {
+        content: '';
+      }
+    }
+  }
+  &__value {
+    display: block;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 41px
+  }
+  &__label {
+    display: block;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: -0.06px;
+  }
+}
+.hero {
+  @include center-width(false, 0);
+  background: {
+    color: $color-blue;
+    // image: url('../images/home/hero-bg--mobile.png');
+    image: url('../images/home/hero-bg--desktop.png');
+    position: top center;
+    repeat: no-repeat;
+  };
+  text-align: center;
+  padding: 60px 20px 80px 20px;
+  position: relative;
+
+
+  &__countdown {
+    margin-bottom: 10px;
+    @include breakpoint(medium) {
+      width: 450px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__preheading,
+  &__heading,
+  &__subheading {
+    color: $white;
+    text-shadow: 1px 1px 2px rgba(#000, .25);
+  }
+
+  &__preheading {
+    display: none;
+  }
+  &__heading {
+    font-weight: 700;
+    font-size: 34.5px;
+    line-height: 31.5px;
+    letter-spacing: -.22px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  &__subheading {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -.11px;
+    margin-bottom: 20px;
+  }
+
+  &__cta {
+    background: $color-red;
+    min-width: 180px;
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -.09px;
+    padding: 13px 0;
+    text-align: center;
+    border-radius: 23px;
+    text-decoration: none;
+    transition: background $animation-time-default $animation-type-default;
+
+    &:hover {
+      color: $white;
+      background-color: $color-dark-red;
+      text-decoration: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    background: {
+      image: url('../images/home/hero-bg--desktop.png');
+    };
+
+    &__inner {
+      max-width: 550px;
+      text-align: left;
+      padding: 200px;
+    }
+    &__preheading {
+      display: block;
+      font-size: 20px;
+      line-height: 38px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    &__heading {
+      font-size: 64px;
+      line-height: 63px;
+      letter-spacing: -0.4px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    &__subheading {
+      font-size: 36px;
+      line-height: 48px;
+      letter-spacing: -0.22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    &__cta {
+      text-transform: none;
+    }
+  }
+}

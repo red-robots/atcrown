@@ -1,0 +1,110 @@
+.block-coursemap {
+  &__inner {
+    @include center-width(false, 0);
+    position: relative;
+    background: {
+      color: $color-blue;
+      image: url('../images/home/map.png');
+      repeat: no-repeat;
+      size: auto 100%;
+      position: center;
+    }
+    min-height: 530px;
+
+    @include breakpoint(xlarge) {
+      background-size: 100% auto;
+    }
+  }
+  &__cta {
+    transition: background $animation-time-default $animation-type-default, color $animation-time-default $animation-type-default;
+    text-decoration: none;
+  }
+  &__header {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-red;
+    color: $white;
+    padding: 30px 50px;
+    @include breakpoint(medium) {
+      right: auto;
+      width: 400px;
+    }
+
+    .block-coursemap__cta {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      text-align: center;
+      @include breakpoint(medium) {
+        opacity: 1;
+        right: auto;
+        left: 100%;
+        background: $white;
+        font-size: 24px;
+        line-height: 130px;
+        color: $charade;
+        width: 180px;
+        &:hover {
+          color: $white;
+          background: $color-dark-red;
+          text-decoration: none;
+        }
+
+      }
+    }
+
+  }
+  &__subheading {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+  }
+  &__heading {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 43px;
+    background: {
+      image: url('../images/layout/chevron-right-white.svg');
+      repeat: no-repeat;
+      position: right center;
+    }
+    @include breakpoint(medium) {
+      background-image: none;
+    }
+  }
+  &__footer {
+    display: none;
+    @include breakpoint(medium) {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 300px;
+
+      .block-coursemap__cta {
+        font-size: 12px;
+        letter-spacing: -.08px;
+        color: white;
+        padding: 20px 60px 20px 30px;
+        display: block;
+        text-decoration: none;
+        background: {
+          color: $color-red;
+          image: url('../images/layout/chevron-right-white.svg');
+          repeat: no-repeat;
+          position: right 42px top 65%;
+          size: 10px;
+        }
+        &:hover {
+          background-color: $white;
+          color: $color-red;
+        }
+
+      }
+    }
+  }
+}

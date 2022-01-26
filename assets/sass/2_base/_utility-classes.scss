@@ -1,0 +1,39 @@
+// Headers
+.u-header-2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 43px;
+  color: $color-blue;
+}
+
+.u-overline {
+  color: $color-red;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+.u-display-block {
+  display: block;
+}
+
+.u-hover-underline {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.u-banner {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  background: {
+    repeat: no-repeat;
+    size: cover;
+    color: $color-gray-light;
+  }
+}

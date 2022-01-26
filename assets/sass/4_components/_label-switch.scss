@@ -1,0 +1,72 @@
+$label-switch-padding-h: padding(base, h);
+$label-switch-padding-v: padding(base, v);
+$label-switch-line-height: $line-height-base;
+$icon-height: $label-switch-line-height;
+$icon-width: $icon-height;
+
+.label-switch {
+  background: $color-inactive-bg;
+  border-radius: $border-radius-base;
+  border: 1px solid $color-input-border;
+  color: $color-inactive;
+  display: inline-block;
+  line-height: $label-switch-line-height;
+  padding: {
+    bottom: $label-switch-padding-v;
+    left: $label-switch-padding-h * 2 + $icon-width;
+    right: $label-switch-padding-h;
+    top: $label-switch-padding-v;
+  }
+
+  position: relative;
+
+  &::before {
+    content: '\2714';
+    font-size: $icon-height;
+    left: $label-switch-padding-h;
+    line-height: $icon-height;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: $label-switch-padding-v;
+    transition: opacity 0.25s linear;
+    width: $icon-width;
+  }
+
+  &::after {
+    border: 1px solid $color-input-border;
+    content: '';
+    height: $icon-height;
+    left: $label-switch-padding-h;
+    position: absolute;
+    top: $label-switch-padding-v;
+    width: $icon-width;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}
+
+.label-switch--active {
+  color: $font-color;
+  background: #fff;
+
+  &::before {
+    opacity: 1;
+  }
+}
+
+.label-switch-input {
+  height: 1px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 1px;
+}

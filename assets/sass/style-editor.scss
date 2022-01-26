@@ -1,0 +1,28 @@
+@import './0_libs/index';
+@import './1_utilities/index';
+//@import './2_base/index';
+//@import './3_layout/index';
+@import './4_components/blocks/index';
+
+
+/* Main column width */
+.wp-block {
+  max-width: 1000px;
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+  max-width: 1080px;
+}
+
+/* Width of "full-wide" blocks */
+.wp-block[data-align="full"] {
+  max-width: none;
+}
+
+.wp-block-block-lab-contact-form {
+  .components-textarea-control__input {
+    min-height: 360px;
+    font-family: Courier, monospace, sans-serif;
+  }
+}

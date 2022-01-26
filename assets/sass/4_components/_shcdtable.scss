@@ -1,0 +1,104 @@
+@mixin set-row($color, $bg-color) {
+  td {
+    background-color: rgba($bg-color, .5);
+    color: $color;
+    border-bottom: 1px solid $color;
+  }
+  &:nth-child(odd) {
+    td {
+      background-color: $bg-color;
+    }
+  }
+}
+
+@mixin set-row-warning() {
+  @include set-row($color-warning, $color-warning-bg);
+}
+
+@mixin set-row-success() {
+  @include set-row($color-success, $color-success-bg);
+}
+
+@mixin set-row-error() {
+  @include set-row($color-error, $color-error-bg);
+}
+
+@mixin set-row-info() {
+  @include set-row($color-info, $color-info-bg);
+}
+
+.shcdtable {
+  th,
+  td {
+    line-height: $line-height-base;
+    padding: padding(base);
+  }
+
+  &__definitions {
+    display: block;
+    dd,
+    dt {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+    dt {
+      padding: 0 10px;
+    }
+  }
+
+  &__row {
+    &:nth-child(odd) {
+      td {
+        background-color: #eee;
+      }
+    }
+  }
+  &__row--info {
+    @include set-row-info();
+  }
+  &__row--success {
+    @include set-row-success();
+  }
+  &__row--error {
+    @include set-row-error();
+  }
+  &__row--active,
+  &__row--warning {
+    @include set-row-warning();
+  }
+}
+
+.shcdtable--members {
+  td, th {
+    white-space: nowrap;
+  }
+}
+
+.pagination {
+  display: block;
+  text-align: center;
+
+  &__link {
+    display: inline-block;
+    text-align: center;
+    padding: padding(small);
+    border: 1px solid $font-color;
+    border-radius: $border-radius-base;
+    min-width: $line-height-base;
+    font-size: $font-size-small;
+    font-weight: normal;
+    line-height: $line-height-small;
+
+    &:hover, &:active {
+      text-decoration: none;
+      box-shadow: 0 0 0 rgba(0,0,0,0) !important;
+    }
+  }
+  &__link--active {
+    font-weight: bold;
+  }
+  &__link--disabled {
+    opacity: .25;
+  }
+}

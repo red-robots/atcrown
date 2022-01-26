@@ -1,0 +1,70 @@
+
+@mixin add-icon($name) {
+  .social-media-nav__link--#{$name} {
+    &::before {
+      content: '';
+      display: block;
+      background: {
+        image: url('../images/social/#{$name}.svg');
+        size: auto 30px;
+        position: center;
+        repeat: no-repeat;
+      }
+      height: 40px;
+      width: 40px;
+    }
+    @include breakpoint(medium) {
+      &::before {
+        background: none;
+        height: 0;
+        width: 0;
+      }
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+
+.social-media-nav {
+  text-align: center;
+  &__item {
+    display: inline-block;
+  }
+  &__link {
+    color: $white;
+    display: block;
+    padding: 10px;
+  }
+  &__link-label {
+    display: none;
+  }
+  @include breakpoint(medium) {
+    &__link {
+      display: inline-block;
+      color: $white;
+      font-weight: 300;
+      font-size: 14px;
+      text-decoration: none;
+      padding: 0 10px;
+    }
+    &__link-label {
+      display: block;
+    }
+    &__item {
+      opacity: .8;
+      &::before {
+        content: '/';
+      }
+      &:first-of-type::before {
+        content: '';
+      }
+    }
+  }
+}
+
+
+@include add-icon(strava);
+@include add-icon(facebook);
+@include add-icon(twitter);
+@include add-icon(instagram);

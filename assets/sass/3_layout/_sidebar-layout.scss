@@ -1,0 +1,24 @@
+.sidebar-layout {
+  @include center-width($max-content-width);
+  min-height: 1000px;
+
+  @include breakpoint(medium) {
+    display: flex;
+  }
+
+  #content {
+    flex-grow: 1;
+    @include breakpoint(medium) {
+      padding-right: 40px;
+    }
+  }
+
+  #sidebar {
+    @include breakpoint(medium) {
+      width: 33%;
+      flex-shrink: 0;
+      border-left: 1px solid $color-gray-light;
+      padding-left: 40px;
+    }
+  }
+}

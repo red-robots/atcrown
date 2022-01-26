@@ -1,0 +1,55 @@
+.attendancetable {
+  &__options {
+    display: flex;
+  }
+
+  &__option {
+    display: block;
+    flex-grow: 1;
+    font-weight: normal;
+    margin: 0;
+    padding: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__option--selected {
+    font-weight: bold;
+  }
+
+  &__row {
+    td {
+      font-style: italic;
+      transition: background 0.25s linear;
+    }
+  }
+
+  &__row--section-break {
+    td {
+      border-top: 1px solid black;
+    }
+  }
+
+  &__row--member-attended {
+    td {
+      background-color: $color-success-bg;
+      font-style: normal;
+    }
+  }
+
+  &__row--member-callout {
+    td {
+      background-color: $color-warning-bg;
+      font-style: normal;
+    }
+  }
+
+  &__row--member-noshow {
+    td {
+      background-color: $color-error-bg;
+      font-style: normal;
+    }
+  }
+}

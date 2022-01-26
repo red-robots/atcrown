@@ -1,0 +1,32 @@
+@keyframes fadein {
+  from {
+    display: table;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tablecolstick {
+  &-wrapper {
+    position: relative;
+  }
+  &-clone {
+    display: none;
+  }
+}
+
+.tablecolstick-wrapper--active {
+  .tablecolstick-clone {
+    @include breakpoint(medium) {
+      display: table;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $white;
+      box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+      animation: fadein linear .25s
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import './wordpress-reset';
+@import './utility-classes';
+
+body,
+html {
+  font-family: $font-family-base;
+  color: $font-color-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+a {
+  color: $link-color-base;
+
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: underline;
+  }
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.clearfix {
+  display: block;
+  overflow: hidden;
+}

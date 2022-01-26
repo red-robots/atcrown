@@ -1,0 +1,86 @@
+$input-height: 60px;
+$input-padding-horizontal: 20px;
+$contactform-font-size: 20px;
+
+.contactform {
+  @include center-width(850px);
+  margin-bottom: 80px;
+  &__content {
+    line-height: 90px;
+    font-size: $contactform-font-size;
+    margin-bottom: 20px;
+  }
+  &__input {
+    width: auto;
+    display: inline-block;
+    height: $input-height;
+    border: 0;
+    padding: 0 $input-padding-horizontal;
+    font-size: $contactform-font-size;
+    font-weight: 300;
+  }
+  &__input--text {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  &__input--select {
+    max-width: 285px;
+    line-height: $input-height;
+    background: #eee;
+    display: block;
+    @include breakpoint(medium) {
+      display: inline-block;
+    }
+  }
+
+  &__input--active {
+    background: #eee;
+  }
+
+  &__field {
+    line-height: $input-height;
+    background: #eee;
+    display: block;
+    position: relative;
+    @include breakpoint(medium) {
+      display: inline-block;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    min-width: 260px;
+    padding-left: $input-padding-horizontal;
+    padding-right: $input-padding-horizontal;
+  }
+
+
+  &__footer {
+    text-align: center;
+  }
+
+  &__submit {
+    background: $color-red;
+    border-radius: 60px;
+    border: 0;
+    color: $white;
+    display: inline-block;
+    font-size: 24px;
+    height: 60px;
+    letter-spacing: -0.32px;
+    line-height: 60px;
+    width: 100%;
+    &:hover {
+      background: $color-dark-red;
+    }
+    @include breakpoint(medium) {
+      max-width: 264px;
+    }
+  }
+}

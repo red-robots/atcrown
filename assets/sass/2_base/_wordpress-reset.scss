@@ -1,0 +1,11 @@
+.navheader,
+.single-post:not(.has-sidebar) #primary,
+.page.page-one-column:not(.twentyseventeen-front-page) #primary,
+.archive.page-one-column:not(.has-sidebar) .page-header,
+.archive.page-one-column:not(.has-sidebar) #primary,
+.wrap,
+.navigation-top .wrap {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}

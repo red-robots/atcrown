@@ -1,0 +1,35 @@
+$color-pill-bg: $color-red;
+$color-pill-bg-hover: $color-darker-red;
+$color-pill-bg-active: $color-blue;
+$pill-height: 40px;
+
+.pills {
+  display: block;
+
+  &__pill {
+    color: $white;
+    background: $color-pill-bg;
+    display: inline-block;
+    border-radius: calc($pill-height / 2);
+    margin-right: 8px;
+    margin-bottom: 10px;
+    padding: 0;
+    transition: background-color $animation-default;
+
+    > a {
+      color: $white;
+      display: block;
+      text-decoration: none;
+      padding: #{calc(($pill-height - $line-height-base) / 2)} #{calc($pill-height / 2)};
+      line-height: $line-height-base;
+    }
+  }
+
+  &__pill--active {
+    background: $color-pill-bg-active;
+  }
+
+  &__pill:hover {
+    background: $color-pill-bg-hover;
+  }
+}

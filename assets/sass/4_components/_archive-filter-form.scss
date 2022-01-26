@@ -1,0 +1,60 @@
+.archive-filter-form {
+  @include set-page-width();
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__filters {
+    flex-grow: 1;
+  }
+
+  &__submit {
+    flex-basis: 10%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 15px;
+  }
+
+  &__footer {
+    flex-basis: 100%;
+    order: 3;
+    text-align: center;
+    font-size: $font-size-small;
+  }
+}
+
+
+.archive-filter {
+  margin-bottom: $line-height-base * 0.5;
+  &__label {
+    margin: 0;
+  }
+}
+
+.archive-filter-result {
+  display: inline-block;
+  border-radius: $border-radius-base;
+  background: #CCC;
+  padding: padding(small, v) 0 padding(small, v) padding(small, h);
+  font-size: $font-size-small;
+  margin-right: 5px;
+  &__label {
+    &:after {
+      content: ':';
+    }
+  }
+  &__value {
+    &:before,
+    &:after {
+      content: '"';
+    }
+  }
+  &__close {
+    display: inline-block;
+    line-height: $line-height-base;
+    width: $line-height-base;
+    text-decoration: none !important;
+    text-align: center;
+    font-weight: bold;
+  }
+}

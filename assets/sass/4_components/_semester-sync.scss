@@ -1,0 +1,14 @@
+.semester-sync-member {
+  &__input {
+
+  }
+  &__input--exists {
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  &__label {
+    float: right;
+    font-size: $font-size-base;
+  }
+}

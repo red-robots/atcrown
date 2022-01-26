@@ -1,0 +1,8 @@
+.music-return {
+  display: inline-block;
+  white-space: nowrap;
+  &__label {
+    margin-right: 10px;
+    font-size: $font-size-small;
+  }
+}

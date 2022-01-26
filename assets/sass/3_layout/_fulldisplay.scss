@@ -1,0 +1,50 @@
+.page-template-template-full-screen-message {
+  background: $color-red;
+  position: relative;
+  font-family: Arial;
+  margin: 0;
+  height: 100vh;
+  min-height: 600px;
+
+  .notice {
+    text-align: center;
+    margin-bottom: 10px;
+    position: static;
+  }
+  .page__header,
+  .page__footer {
+    display: none;
+  }
+  .page__content {
+    height: 100vh;
+    padding-top: 0;
+    min-height: 0;
+  }
+
+  .fulldisplay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .fulldisplay__heading {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .fulldisplay__subheading {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+
+  .contact-form__form {
+    text-align: center;
+  }
+}

@@ -1,0 +1,38 @@
+.section-info {
+  &__defs {
+    display: flex;
+    flex-wrap: wrap;
+
+    dt,
+    dd {
+      margin: 0;
+      padding: padding();
+      font-size: $font-size-small;
+
+      @include breakpoint(medium) {
+        font-size: $font-size-base;
+      }
+    }
+
+    dt {
+      flex-basis: 35%;
+      text-align: right;
+      flex-shrink: 0;
+      flex-grow: 0;
+
+      @include breakpoint(medium) {
+        flex-basis: 50%;
+      }
+    }
+
+    dd {
+      flex-basis: 65%;
+      flex-shrink: 0;
+      flex-grow: 1;
+
+      @include breakpoint(medium) {
+        flex-basis: 50%;
+      }
+    }
+  }
+}

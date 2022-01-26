@@ -1,0 +1,60 @@
+.hero {
+  @include center-width;
+  background: {
+    color: $color-blue;
+    image: url('../images/home/hero-bg--mobile.png');
+    position: top center;
+    repeat: no-repeat;
+  };
+  text-align: center;
+  padding: 60px 20px 80px 20px;
+
+
+  &__preheading,
+  &__heading,
+  &__subheading {
+    color: $white;
+    text-shadow: 1px 1px 2px rgba(#000, .25);
+  }
+
+  &__preheading {
+    display: none;
+  }
+  &__heading {
+    font-weight: 800;
+    font-size: 34.5px;
+    line-height: 31.5px;
+    letter-spacing: -.22px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  &__subheading {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -.11px;
+    margin-bottom: 20px;
+  }
+
+  &__cta {
+    background: $color-red;
+    min-width: 180px;
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -.09px;
+    padding: 13px 0;
+    text-align: center;
+    border-radius: 23px;
+    text-decoration: none;
+  }
+
+  @include breakpoint(medium) {
+    &__preheading {
+      display: block;
+
+    }
+  }
+}

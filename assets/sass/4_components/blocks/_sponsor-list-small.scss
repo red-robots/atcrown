@@ -1,0 +1,56 @@
+.sponsor-list-small {
+  padding: 55px 0 60px 0;
+  @include breakpoint(medium) {
+    padding: 115px 0 140px 0;
+  }
+
+  &__header {
+    @include center-width(610px);
+    text-align: center;
+  }
+  &__heading {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: $color-red;
+    @include breakpoint(medium) {
+      margin-bottom: 20px;
+    }
+  }
+  &__blurb {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  &__list {
+    @include center-width;
+    max-width: map-get($breakpoints, large);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  &__sponsor {
+    width: 50%;
+    max-height: 100px;
+    margin: 40px 0;
+    display: block;
+    font-weight: 700;
+    @include breakpoint(medium) {
+      width: 25%;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: auto;
+      height: auto;
+      max-height: 100px;
+    }
+  }
+}

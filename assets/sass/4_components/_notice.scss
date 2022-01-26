@@ -1,0 +1,13 @@
+.notice {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 999;
+  background: $color-red;
+  color: $white;
+  padding: 10px;
+  &__title {
+    font-weight: 700;
+  }
+}

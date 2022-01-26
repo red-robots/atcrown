@@ -1,0 +1,26 @@
+@import 'header',
+  'footer',
+  'content',
+  'rootpage-header',
+  'single-content',
+  'subpage-header',
+  'post-list',
+  'sidebar-layout',
+  './templates/index';
+
+@mixin set-page-width() {
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint(medium) {
+    max-width: map-get($breakpoints, medium) * 0.9;
+  }
+
+  @include breakpoint(large) {
+    max-width: map-get($breakpoints, medium);
+  }
+
+  @include breakpoint(xlarge) {
+    max-width: map-get($breakpoints, large);
+  }
+}

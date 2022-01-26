@@ -1,0 +1,25 @@
+$transparent: rgba(0,0,0,0);
+$highlight-color: $color-light-blue;
+
+@mixin set-highlight($line-height, $highlight-height) {
+  line-height: $line-height;
+  $buffer: calc(($line-height - $highlight-height) / 2);
+  $highlight-stop: $buffer + $highlight-height;
+  background: repeating-linear-gradient(
+    $transparent $buffer,
+    $highlight-color $buffer,
+    $highlight-color $highlight-stop,
+    $transparent $highlight-stop,
+    $transparent $highlight-stop + $buffer * 2
+  );
+}
+
+.block-highlight {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 60px;
+  padding: 0 40px;
+  margin: 20px 0;
+  @include set-highlight(60px, 50px);
+}
+

@@ -1,0 +1,54 @@
+.single-content {
+  .entry-content {
+    @include breakpoint(medium) {
+      font-size: 16px;
+      line-height: 28px;
+      font-weight: 300;
+
+      p {
+        margin-bottom: 40px;
+      }
+    }
+
+    &__thumbnail {
+      @include center-width($max-content-width);
+      margin-bottom: 60px;
+    }
+
+    &__body {
+      @include center-width(740px);
+    }
+  }
+}
+
+.entry-footer {
+  background-color: $color-gray-lighter;
+  padding: 90px 0;
+
+  .footer-posts {
+    display: block;
+    @include center-width($max-content-width);
+
+    @include breakpoint(medium) {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__post {
+      text-decoration: none;
+      margin-left: 14px;
+      margin-right: 14px;
+      color: $color-gray-dark;
+
+      @include breakpoint(medium) {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 33%;
+      }
+
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+}

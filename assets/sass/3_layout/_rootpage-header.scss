@@ -1,0 +1,93 @@
+.rootpage-header {
+  background: $color-red;
+  margin-bottom: $line-height-content;
+  @include breakpoint(medium) {
+    margin-bottom: $line-height-content * 3;
+  }
+
+  &__inner {
+    @include center-width(false, 0);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(medium) {
+
+    }
+    @include breakpoint(large) {
+      min-width: map-get($breakpoints, large);
+      flex-direction: row;
+    }
+  }
+
+  &__banner {
+    display: none;
+    background: {
+      image: url("../images/headings/tmp.png");
+      position: center;
+      repeat: no-repeat;
+      size: 100% auto;
+    }
+    min-height: 120px;
+
+    @include breakpoint(large) {
+      display: block;
+      order: 2;
+      width: 50%;
+      background: {
+        size: auto 100%;
+      }
+    }
+
+  }
+  &__content {
+    padding: 20px;
+    @include breakpoint(large) {
+      order: 1;
+      width: 50%;
+      box-sizing: border-box;
+      padding: 120px 150px;
+      text-align: left;
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    color: $color-blue;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.88px;
+    margin-bottom: 10px;
+    @include breakpoint(large) {
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: 1.1px;
+    }
+  }
+  &__heading {
+    font-size: 24px;
+    line-height: 32px;
+    color: $white;
+    font-weight: 500;
+    margin-bottom: 20px;
+    @include breakpoint(large) {
+      font-size: 34px;
+      line-height: 41px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__subheading {
+    text-transform: uppercase;
+    color: $white;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.08px;
+    a {
+      color: $color-blue;
+    }
+    @include breakpoint(large) {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: -0.08px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+$font-size-base: 16px;
+$font-size-large: $font-size-base * 1.25;
+$font-size-small: $font-size-base * 0.75;
+$font-family-base: montserrat, Arial, Helvetica, sans-serif;
+$font-family-heading: 'europa-bold', Helvetica, Arial, sans-serif;
+
+// $font-color: $mine-shaft;
+$border-radius-base: 4px;
+$border-radius-large: 8px;
+$border-radius-small: 2px;
+$line-height-base: $font-size-base * 1.25;
+$line-height-large: $line-height-base * 1.25;
+$line-height-small: $line-height-base * 0.75;
+$line-height-content: 28px;
+$max-inner-page-width: 740px;
+
+$padding: (
+  small: (v: calc($line-height-small / 2), h: calc($line-height-small * 0.75)),
+  base: (v: calc($line-height-base / 2), h: calc($line-height-base * 0.75)),
+  large: (v: calc($line-height-large / 2), h: calc($line-height-large * 0.75))
+);
+
+$breakpoints: (
+  small: 300px,
+  medium: 720px,
+  large: 1100px,
+  xlarge: 1440px
+);
+$max-content-width: 1000px;
+$header-height-mobile: 60px;
+$header-height-desktop: 90px;
+$wp-admin-bar-mobile: 46px;
+$animation-time-default: .25s;
+$animation-type-default: ease-out;
+$animation-default: $animation-time-default $animation-type-default;

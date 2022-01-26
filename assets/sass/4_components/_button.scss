@@ -1,0 +1,19 @@
+$button-color-base: #fff;
+
+.button {
+  color: $button-color-base;
+  background-color: $link-color-base;
+  padding: padding(small);
+  font-size: $font-size-small;
+  border-radius: $border-radius-base;
+
+  &:hover {
+    color: $button-color-base !important;
+    text-decoration: none;
+    background-color: $link-color-hover;
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+  }
+}

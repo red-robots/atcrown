@@ -1,0 +1,9 @@
+.buttonfloat-copy {
+  position: fixed;
+  bottom: -300px;
+  transition: bottom 0.25s linear;
+}
+
+.buttonfloat-copy--hover {
+  bottom: 20px;
+}

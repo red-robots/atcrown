@@ -1,0 +1,107 @@
+$cta-row-height: 320px;
+.home-ctas {
+  background-color: $color-blue;
+  @include center-width(false, 0);
+
+  @include breakpoint(medium) {
+    display: flex;
+  }
+
+  &__cta {
+    text-decoration: none;
+    padding: 30px 50px;
+    display: block;
+    border-bottom: 1px solid $tundora;
+    transition: background $animation-time-default $animation-type-default;
+
+    &::after {
+      content: url("assets/images/icons/arrow-red-right.svg");
+      font-size: 46px;
+    }
+    &:hover {
+      background-color: $white;
+      text-decoration: none;
+      .home-ctas__cta-title,
+      .home-ctas__cta-subtitle {
+        color: $color-red;
+      }
+    }
+
+    @include breakpoint(medium) {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: 0;
+      min-height: $cta-row-height;
+      box-sizing: border-box;
+      position: relative;
+      &::before {
+        content: '';
+        width: 1px;
+        height: 200px;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background-color: $tundora;
+        position: absolute;
+        transition: opacity $animation-time-default $animation-type-default;
+      }
+    }
+  }
+  &__cta-title {
+    color: #7d7d7d;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    transition: color $animation-time-default $animation-type-default;
+
+    @include breakpoint(medium) {
+      width: 75%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  &__cta-subtitle {
+    display: none;
+    transition: color $animation-time-default $animation-type-default;
+
+    @include breakpoint(medium) {
+      display: block;
+      color: $white;
+      margin-bottom: 20px;
+    }
+  }
+  &__cta:nth-last-child(2),
+  &__cta:last-child {
+    border-bottom: 0;
+    &::before {
+      display: none;
+    }
+  }
+  &__cta:last-child {
+    background: $color-red;
+    .home-ctas__cta-title {
+      color: $white;
+      text-transform: none;
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 0;
+    }
+    &::after {
+      content: url("assets/images/icons/arrow-white-right.svg");
+      display: block;
+    }
+    &:hover {
+      background-color: $white;
+      &::after {
+        content: url("assets/images/icons/arrow-red-right.svg");
+      }
+      .home-ctas__cta-title {
+        color: $color-red;
+      }
+    }
+  }
+}
