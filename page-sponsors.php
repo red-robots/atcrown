@@ -66,7 +66,7 @@ function get_content($name, $dir) {
           }
         }
         if($logo) { ?>
-        <div class="sponsor-logo cat_<?php echo $tier_type ?> <?php echo ($has_more_info) ? 'has-info':''; ?>">
+        <div class="sponsor-logo<?php echo ($tier_type) ? ' cat_'.$tier_type.' ':'' ?><?php echo ($has_more_info) ? 'has-info':''; ?>">
           <?php if ($has_more_info) { ?>
             <a href="javascript:void(0)" data-id="<?php echo $postid ?>" class="link sponsorInfo" style="background-image:url('<?php echo $logo['url'] ?>')">
               <img src="<?php echo $placeholder ?>" alt="">
