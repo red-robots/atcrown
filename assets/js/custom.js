@@ -16,11 +16,8 @@ jQuery(document).ready(function ($) {
         action: 'get_posttype_content',
         postid: target.attr("data-id")
       },
-      beforeSend: function beforeSend() {// $("#loaderdiv").show();
-        // target.attr("data-pg", nextpage);
-        // if(nextpage>total) {
-        //   $('.loadmore').remove();
-        // } 
+      beforeSend: function beforeSend() {
+        $("#loaderdiv").show();
       },
       success: function success(response) {
         if (response.content) {
@@ -30,10 +27,12 @@ jQuery(document).ready(function ($) {
         }
       },
       complete: function complete() {
-        //$("#loaderdiv").hide();
+        $("#loaderdiv").hide();
         $("#close-info").on("click", function (e) {
           e.preventDefault();
           $("#sponsor-details-popup").fadeOut();
+          $(".sponsor-wrap").removeClass('fadeIn');
+          $("#sponsor-details").html("");
         });
       }
     });

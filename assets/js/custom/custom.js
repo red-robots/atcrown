@@ -18,11 +18,7 @@ jQuery(document).ready(function ($) {
           postid : target.attr("data-id")
         },
         beforeSend:function(){
-          // $("#loaderdiv").show();
-          // target.attr("data-pg", nextpage);
-          // if(nextpage>total) {
-          //   $('.loadmore').remove();
-          // } 
+          $("#loaderdiv").show();
         },
         success : function( response ) {
           if(response.content) {
@@ -32,10 +28,12 @@ jQuery(document).ready(function ($) {
           }
         },
         complete: function() {
-          //$("#loaderdiv").hide();
+          $("#loaderdiv").hide();
           $("#close-info").on("click",function(e){
             e.preventDefault();
             $("#sponsor-details-popup").fadeOut();
+            $(".sponsor-wrap").removeClass('fadeIn');
+            $("#sponsor-details").html("");
           });
         }
       });

@@ -29,6 +29,8 @@
       </footer>
     </div>
 
+    <div id="loaderdiv"><div class="loader"><span class="loadtxt">Loading...</span></div></div>
+    
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
