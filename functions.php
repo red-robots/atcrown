@@ -29,6 +29,14 @@ function atc10k_enqueue_styles() {
   wp_register_style('jquery-ui', 'https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css');
   wp_enqueue_style('jquery-ui');
 
+  wp_enqueue_script( 
+    'bellaworks-customjs', get_template_directory_uri() . '/assets/js/custom.js', array(), '20220127', true 
+  );
+
+  wp_localize_script( 'bellaworks-customjs', 'frontajax', array(
+    'ajaxurl' => admin_url( 'admin-ajax.php' )
+  ));
+
 }
 add_action('wp_enqueue_scripts', 'atc10k_enqueue_styles');
 

@@ -79,6 +79,7 @@ a {
   }
   ul li {
     display: list-item;
+    margin-bottom: 0;
     ul {
       list-style-type: circle;
     }
@@ -128,7 +129,7 @@ ul.faqlist__list,
 }
 body.body--scroll-top {
   .page-header__inner--desktop .page-header__logo {
-    height: 60px;
+    height: 58px;
   }
 } 
 .hero .hero__inner {
@@ -137,6 +138,108 @@ body.body--scroll-top {
   padding-left: 10vw;
   padding-right: 10vw;
 }
+.sponsors-section {
+  .inner {
+    @include flexgroup();
+  }
+  .sponsor-logo {
+    width: 100%;
+    padding: 15px;
+    @include xs {
+      width: 50%;
+    }
+    @include tab {
+      width: 25%;
+    }
+    .link {
+      display: block;
+      width: 100%;
+      float: left;
+      margin: 0 0;
+      padding: 0 0;
+      background-position: center;
+      background-repeat:no-repeat;
+      background-size: 70%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    a.link {
+      cursor: pointer;
+    }
+    a.link:hover {
+      // box-shadow: 0 0 15px rgba(69,164,255,0.5);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    img {
+      width: 100%;
+      height: auto;
+      float: left;
+    }
+  }
+}
+.wrapper {
+  max-width: 1440px;
+  width: 100%;
+  margin:0 auto;
+}
+
+#sponsor-details-popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  background: rgba(0,0,0,.75);
+  overflow: auto;
+  z-index: 1000000;
+  .sponsor-wrap {
+    max-width: 800px;
+    width: 100%;
+    min-height: 20em;
+    margin:0 auto;
+    padding: 30px 35px;
+    background: #FFF;
+    position: relative;
+    top: 30%;
+    transform: translateY(-30%);
+    border-radius: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  #close-info {
+    display: block;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    text-indent: -999em;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 0.5;
+    transition: all ease .3s;
+    &:before, &:after {
+      content:"";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #000;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 @media screen and (max-width: 900px) {
   .hfeed.page {
     overflow-x: hidden;
@@ -158,8 +261,11 @@ body.body--scroll-top {
     width: 100%;
   }
   .single-content .entry-content__thumbnail {
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 20px;
+    // margin-left: 0;
+    // margin-right: 0;
+    // margin-bottom: 20px;
+    width: calc(100% - 20px);
+    margin:0 auto 20px;
+    
   }
 }
