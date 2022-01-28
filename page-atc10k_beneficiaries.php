@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Our Sponsors
+ * Template Name: Beneficiary
  */
 function get_content($name, $dir) {
   $ds = DIRECTORY_SEPARATOR;
@@ -38,7 +38,7 @@ function get_content($name, $dir) {
 <?php endif;?>
 
   <?php
-  $post_type = 'atc10k_sponsor';
+  $post_type = 'atc10k_beneficiaries';
   $args = array(
     'posts_per_page'=> -1,
     'post_type'     => $post_type,
@@ -47,27 +47,29 @@ function get_content($name, $dir) {
   $placeholder = get_bloginfo('template_url') .'/assets/images/rectangle-lg.png';
   $sponsors = new WP_Query($args);
   if ( $sponsors->have_posts() ) {  ?>
-  <div class="sponsors-section">
+  <div class="sponsors-section beneficiaries">
     <div class="wrapper">
       <div class="inner">
       <?php while ( $sponsors->have_posts() ) : $sponsors->the_post(); 
         $postid = get_the_ID();
         $logo = get_field("logo_color");
-        $terms = get_the_terms($postid,'sponsor-categories');
-        $types = array('tier-1','tier-2');
-        $has_more_info = '';
-        $tier_type = '';
-        if($terms) {
-          $tier_type = $terms[0]->slug;
-          foreach($terms as $term) {
-            $cat = $term->slug;
-            if( in_array($cat,$types) ) {
-              $has_more_info = true;
-            }
-          }
-        }
+        $has_more_info = get_field('description',$postid);
+        // $terms = get_the_terms($postid,'sponsor-categories');
+        // $types = array('tier-1','tier-2');
+        // $has_more_info = '';
+        // $tier_type = '';
+        // if($terms) {
+        //   $tier_type = $terms[0]->slug;
+        //   foreach($terms as $term) {
+        //     $cat = $term->slug;
+        //     if( in_array($cat,$types) ) {
+        //       $has_more_info = true;
+        //     }
+        //   }
+        // }
+
         if($logo) { ?>
-        <div class="sponsor-logo<?php echo ($tier_type) ? ' cat_'.$tier_type.' ':'' ?><?php echo ($has_more_info) ? 'has-info':''; ?>">
+        <div class="sponsor-logo<?php echo ($has_more_info) ? ' has-info':''; ?>">
           <?php if ($has_more_info) { ?>
             <a href="javascript:void(0)" data-posttype="<?php echo $post_type ?>" data-title="<?php echo get_the_title(); ?>" data-id="<?php echo $postid ?>" class="link sponsorInfo" style="background-image:url('<?php echo $logo['url'] ?>')">
               <img src="<?php echo $placeholder ?>" alt="">

@@ -1,4 +1,80 @@
 <?php
+/*-------------------------------------
+  Custom client login, link and title.
+---------------------------------------*/
+function my_login_logo() { 
+  // $custom_logo_id = get_theme_mod( 'custom_logo' );
+  // $logoImg = wp_get_attachment_image_src($custom_logo_id,'large');
+  //$logo_url = ($logoImg) ? $logoImg[0] : '';
+  $logo_url = get_bloginfo('template_url') . '/assets/images/logo/atc10k-desktop.svg';
+  if($logo_url) { ?>
+  <style type="text/css">
+    .login #login_error {
+      color: #d63638;
+    }
+    body.login {
+      background-color: #001b33;
+      color: #000;
+    }
+    body.login div#login h1 a {
+      background-image: url(<?php echo $logo_url; ?>);
+      background-size: contain;
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    .login #backtoblog, .login #nav {
+      text-align: center;
+    }
+    body.login #backtoblog a, 
+    body.login #nav a {
+      color: #157394;
+      transition: all ease .3s;
+    }
+    body.login #backtoblog a:hover,
+    body.login #nav a:hover {
+      color: #ec3742;
+    }
+    body.login form {
+      border: none;
+      border-radius: 10px;
+    }
+    body.login #login form p.submit {
+      display: block;
+      width: 100%;
+    }
+    body.login #login form p.submit input.button-primary {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 15px;
+    }
+    body.login.wp-core-ui .button-primary {
+      background: #d63638;
+      border-color: #dd202b;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all ease .3s;
+    }
+    body.login.wp-core-ui .button-primary:hover {
+      background: #f17078;
+    }
+  </style>
+<?php }
+}
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+// Change Link
+function loginpage_custom_link() {
+  return get_site_url();
+}
+add_filter('login_headerurl','loginpage_custom_link');
+
+function bella_login_logo_url_title() {
+    return get_bloginfo('name');
+}
+add_filter( 'login_headertitle', 'bella_login_logo_url_title' );
+
 function atc10k_enqueue_styles() {
   $parent_style = 'blankslate';
   // Parent styles

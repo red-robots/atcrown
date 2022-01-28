@@ -6,40 +6,56 @@
  
 jQuery(document).ready(function ($) {
 
-  $(".sponsorInfo").hover(
-    function(){
-      var target = $(this);
-      $.ajax({
-        url : frontajax.ajaxurl,
-        type : 'post',
-        dataType : "json",
-        data : {
-          action : 'get_posttype_content',
-          postid : target.attr("data-id")
-        },
-        beforeSend:function(){
-          $("#loaderdiv").show();
-        },
-        success : function( response ) {
-          if(response.content) {
-            $("#sponsor-details").html(response.content);
-            $("#sponsor-details-popup").fadeIn();
-            $(".sponsor-wrap").addClass('fadeIn');
-          }
-        },
-        complete: function() {
-          $("#loaderdiv").hide();
-          $("#close-info").on("click",function(e){
-            e.preventDefault();
-            $("#sponsor-details-popup").fadeOut();
+  $(document).on('click','.sponsorInfo',function(e){
+    e.preventDefault();
+    var target = $(this);
+    target.addClass('active');
+    $.ajax({
+      url : frontajax.ajaxurl,
+      type : 'post',
+      dataType : "json",
+      data : {
+        action : 'get_posttype_content',
+        postid : target.attr("data-id")
+      },
+      beforeSend:function(){
+        $("#loaderdiv").show();
+      },
+      success : function( response ) {
+        if(response.content) {
+          $("#sponsor-details").html(response.content);
+          $("#sponsor-details-popup").fadeIn();
+          //$(".sponsor-wrap").addClass('fadeIn').css('background-image','url('+imgURL+')');
+          //var img = '<img src="'+imgURL+'" alt="" class="sponsor-logo-img">';
+          //$(img).appendTo(".sponsor-wrap");
+          //$('.sponsor-wrap .sponsorLogo').html(img);
+        }
+      },
+      complete: function() {
+        $("#loaderdiv").hide();
+        $(document).on("click","#close-info",function(e){
+          e.preventDefault();
+          $("#sponsor-details-popup").hide();
+          $(".sponsor-wrap").removeClass('fadeIn');
+          $("#sponsor-details").html("");
+          $(".sponsorInfo").removeClass('active');
+        });
+        $(document).on('click', function (e) {
+          if ($(e.target).closest(".sponsor-wrap").length === 0) {
+            $("#sponsor-details-popup").hide();
             $(".sponsor-wrap").removeClass('fadeIn');
             $("#sponsor-details").html("");
-          });
-        }
-      });
-    }, function() {
-      var target = $(this);
-    }
-  );
+          }
+        });
+        $(document).on("click","#sponsor-details-popup",function(e){
+          $(".sponsorInfo").removeClass('active');
+        });
+      }
+    });
+  });
+
+
+
+
 
 }); 

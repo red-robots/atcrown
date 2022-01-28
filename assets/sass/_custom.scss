@@ -165,9 +165,13 @@ body.body--scroll-top {
     a.link {
       cursor: pointer;
     }
+    a.link.active,
     a.link:hover {
-      // box-shadow: 0 0 15px rgba(69,164,255,0.5);
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      box-shadow: 0 0 20px rgba(5,79,151,0.5);
+      //box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    a.link:hover {
+      transform: translateY(-3px);
     }
     img {
       width: 100%;
@@ -198,13 +202,31 @@ body.body--scroll-top {
     min-height: 20em;
     margin:0 auto;
     padding: 30px 35px;
-    background: #FFF;
+    background-size: 30%;
+    background-position: bottom right;
+    background-color: #FFF;
+    background-repeat: no-repeat;
     position: relative;
     top: 30%;
     transform: translateY(-30%);
     border-radius: 15px;
     font-size: 16px;
     line-height: 1.5;
+  }
+  .sponsorLogo {
+    width: 50%;
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translateY(-50%) translateX(-50%);
+    bottom: 10px;
+    right: 10px;
+    filter: grayscale(1);
+    opacity: 0.1;
+  }
+  .sponsor-logo-img {
+    width: 100%;
+    height: auto;
   }
   #close-info {
     display: block;
@@ -240,6 +262,47 @@ body.body--scroll-top {
   }
 }
 
+#home-upcoming-events.home-quote {
+  padding-left: 0;
+  padding-right: 0;
+  .wrapper {
+    max-width: 1200px;
+    width: 100%;
+  }
+  .flexwrap {
+    @include flexgroup();
+    @include flexbox-justify(center);
+  }
+  .event {
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    @include tab {
+      width: 33.33%;
+    }
+  }
+  .eventLink {
+    text-decoration: none;
+    color: #FFF;
+  }
+  .date {
+    margin-bottom: 5px;
+  }
+  .title {
+    font-size: 1.7em;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .date, .title {
+    transition: all ease .3s;
+  }
+  a.eventLink:hover {
+    .date, .title {
+      color: #df3a3e;
+    }
+  }
+}
+
 #loaderdiv {
   display: none;
   position: fixed;
@@ -260,6 +323,7 @@ body.body--scroll-top {
     height: 8em;
   }
 }
+
 
 .loader,
 .loader:after {

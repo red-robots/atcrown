@@ -13,7 +13,7 @@ add_action( 'init', function() {
       ),
       'public' => true,
       'has_archive' => true,
-      'menu_icon' => 'dashicons-groups',
+      'menu_icon' => 'dashicons-share',
     )
   );
 });

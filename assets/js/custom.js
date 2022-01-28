@@ -6,8 +6,10 @@
  *	Developed by: Lisa DeBona
  */
 jQuery(document).ready(function ($) {
-  $(".sponsorInfo").hover(function () {
+  $(document).on('click', '.sponsorInfo', function (e) {
+    e.preventDefault();
     var target = $(this);
+    target.addClass('active');
     $.ajax({
       url: frontajax.ajaxurl,
       type: 'post',
@@ -22,21 +24,32 @@ jQuery(document).ready(function ($) {
       success: function success(response) {
         if (response.content) {
           $("#sponsor-details").html(response.content);
-          $("#sponsor-details-popup").fadeIn();
-          $(".sponsor-wrap").addClass('fadeIn');
+          $("#sponsor-details-popup").fadeIn(); //$(".sponsor-wrap").addClass('fadeIn').css('background-image','url('+imgURL+')');
+          //var img = '<img src="'+imgURL+'" alt="" class="sponsor-logo-img">';
+          //$(img).appendTo(".sponsor-wrap");
+          //$('.sponsor-wrap .sponsorLogo').html(img);
         }
       },
       complete: function complete() {
         $("#loaderdiv").hide();
-        $("#close-info").on("click", function (e) {
+        $(document).on("click", "#close-info", function (e) {
           e.preventDefault();
-          $("#sponsor-details-popup").fadeOut();
+          $("#sponsor-details-popup").hide();
           $(".sponsor-wrap").removeClass('fadeIn');
           $("#sponsor-details").html("");
+          $(".sponsorInfo").removeClass('active');
+        });
+        $(document).on('click', function (e) {
+          if ($(e.target).closest(".sponsor-wrap").length === 0) {
+            $("#sponsor-details-popup").hide();
+            $(".sponsor-wrap").removeClass('fadeIn');
+            $("#sponsor-details").html("");
+          }
+        });
+        $(document).on("click", "#sponsor-details-popup", function (e) {
+          $(".sponsorInfo").removeClass('active');
         });
       }
     });
-  }, function () {
-    var target = $(this);
   });
 });

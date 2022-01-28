@@ -32,35 +32,62 @@ get_header();
     <?php } ?>
 
     <?php
+    
+    // $row3_author = get_field("row3_author");
+    // $row3_quote = get_field("row3_quote");
+    $row3Events = get_field("row3_events");
+    $upcomingEvents = get_field('');
+    // $row3Link = get_field("row3_link");
+    // $r3Link = ( isset($row3Link['url']) && $row3Link['url'] ) ? $row3Link['url'] : '';
+    // $r3Text = ( isset($row3Link['title']) && $row3Link['title'] ) ? $row3Link['title'] : '';
+    // $r3Target = ( isset($row3Link['target']) && $row3Link['target'] ) ? $row3Link['target'] : '_self';
+    //$row3_content = array($row3_author,$row3_quote,$row3Events);
+
     $row3Img = get_field("row3_imagebg");
-    $row3_author = get_field("row3_author");
-    $row3_quote = get_field("row3_quote");
-    $row3Link = get_field("row3_link");
-    $r3Link = ( isset($row3Link['url']) && $row3Link['url'] ) ? $row3Link['url'] : '';
-    $r3Text = ( isset($row3Link['title']) && $row3Link['title'] ) ? $row3Link['title'] : '';
-    $r3Target = ( isset($row3Link['target']) && $row3Link['target'] ) ? $row3Link['target'] : '_self';
-    $row3_content = array($row3_author,$row3_quote,$row3Link);
     $r3Style = ($row3Img) ? ' style="background-image:url('.$row3Img['url'].')"' : '';
     
-    if($row3_content && array_filter($row3_content)) { ?>
-    <section class="home-quote"<?php echo $r3Style ?>>
-      <?php if ($row3_author) { ?>
-      <cite class="home-quote__author"><?php echo $row3_author ?></cite>
-      <?php } ?>
-      <?php if ($row3_quote) { ?>
-      <blockquote class="home-quote__quote"><?php echo $row3_quote ?></blockquote>
-      <?php } ?>
-      <?php if ($r3Text && $r3Link) { ?>
-      <a class="home-quote__cta" href="<?php echo $r3Link ?>" target="<?php echo $r3Target ?>"><?php echo $r3Text ?></a>
-      <?php } ?>
+    if( $row3Events ) { ?>
+    <section id="home-upcoming-events" class="home-quote"<?php echo $r3Style ?>>
+      <div class="wrapper">
+        <div class="flexwrap">
+          <?php foreach ($row3Events as $e) { 
+            $title = $e['title'];
+            $date = $e['date'];
+            $link = $e['link'];
+            $bLink = ( isset($link['url']) && $link['url'] ) ? $link['url'] : '';
+            $bText = ( isset($link['title']) && $link['title'] ) ? $link['title'] : '';
+            $bTarget = ( isset($link['target']) && $link['target'] ) ? $link['target'] : '_self';
+            $openLink = '<div class="eventLink">';
+            $closeLink = '</div';
+            if($bLink) {
+              $openLink = '<a href="'.$bLink.'" target="'.$bTarget.'" class="eventLink">';
+              $closeLink = '</a>';
+            }
+            if($title || $date) { ?>
+              <div class="event">
+                <?php echo $openLink ?>
+                <?php if ($date) { ?>
+                  <div class="date"><?php echo $date ?></div>
+                <?php } ?>
+                <?php if ($title) { ?>
+                  <div class="title"><?php echo $title ?></div>
+                <?php } ?>
+                <?php echo $closeLink ?>
+              </div> 
+           <?php } ?>
+          <?php } ?>
+        </div>
+      </div>
     </section>
     <?php } ?>
 
     <?php
-    $sponsors = get_field("sponsors");
+    //$sponsors = get_field("sponsors");
+    $sponsorsList = get_field("sponsorsList");
     $row4_heading = get_field("row4_heading");
     $row4_blurb = get_field("row4_blurb");
-    if($sponsors || $row4_heading || $row4_blurb) { ?>
+
+    if($sponsorsList || $row4_heading || $row4_blurb) { ?>
     <section class="sponsor-list-small">
       <?php if($row4_heading || $row4_blurb) { ?>
       <header class="sponsor-list-small__header">
@@ -73,19 +100,34 @@ get_header();
       </header>
       <?php } ?>
 
-      <?php if($sponsors) { ?>
+      <?php if($sponsorsList) { 
+        $args = array(
+          'posts_per_page'=> -1,
+          'post_type'     => 'atc10k_sponsor',
+          'post_status'   => 'publish',
+          'tax_query'     => [
+            [
+              'taxonomy'=>'sponsor-categories',
+              'field'=>'term_id',
+              'terms'=>$sponsorsList
+            ]
+          ]
+        );
+        $sponsors = get_posts($args);
+        ?>
       <div class="sponsor-list-small__list">
         <?php foreach ($sponsors as $s) { 
-          $img_id = $s['ID'];
-          $imgLink = get_field("attachment_website_url",$img_id);
+          $pid = $s->ID;
+          $imgLink = get_field("url",$pid);
           $brandLink = ($imgLink) ? $imgLink : 'javascript:void(0)';
-          $brandTarget = ($imgLink) ? '_blank':'_self';
-        ?>
-        <a href="<?php echo $brandLink ?>" target="<?php echo $brandTarget ?>" class="sponsor-list-small__sponsor sponsor">
-          <header class="sponsor__header">
-            <img width="<?php echo $s['width'] ?>" height="<?php echo $s['height'] ?>" src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>">
-          </header>
-        </a>
+          $img = get_field('logo_bw',$pid);
+          if($img) { ?>
+          <a href="<?php echo $brandLink ?>" target="_blank" class="sponsor-list-small__sponsor sponsor">
+            <header class="sponsor__header">
+              <img width="<?php echo $img['width'] ?>" height="<?php echo $img['height'] ?>" src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>">
+            </header>
+          </a>
+          <?php } ?>
         <?php } ?>
       </div>
       <?php } ?>
