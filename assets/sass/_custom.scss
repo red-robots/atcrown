@@ -141,6 +141,7 @@ body.body--scroll-top {
 .sponsors-section {
   .inner {
     @include flexgroup();
+    @include flexbox-justify(center);
   }
   .sponsor-logo {
     width: 100%;

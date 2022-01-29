@@ -453,7 +453,7 @@ ul.faqlist__list,.tabnav ul{list-style:none}
 .page-header__inner--desktop .page-header__logo{height:50px;-webkit-transition:all ease .3s;transition:all ease .3s}
 body.body--scroll-top .page-header__inner--desktop .page-header__logo{height:58px}
 .hero .hero__inner{max-width:850px;width:100%;padding-left:10vw;padding-right:10vw}
-.sponsors-section .inner{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+.sponsors-section .inner{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .sponsors-section .sponsor-logo{width:100%;padding:15px}
 .sponsors-section .sponsor-logo .link{display:block;width:100%;float:left;margin:0;padding:0;background-position:center;background-repeat:no-repeat;background-size:70%;-webkit-box-shadow:0 0 10px rgba(0,0,0,.1);box-shadow:0 0 10px rgba(0,0,0,.1)}
 .sponsors-section .sponsor-logo a.link{cursor:pointer}
