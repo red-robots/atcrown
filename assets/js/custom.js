@@ -6,6 +6,12 @@
  *	Developed by: Lisa DeBona
  */
 jQuery(document).ready(function ($) {
+  if ($('.embed-youtube').length) {
+    $('.embed-youtube').each(function () {
+      $(this).append('<img class="video-resizer" src="' + assets + '/images/video-resizer.png" alt="">');
+    });
+  }
+
   $(document).on('click', '.sponsorInfo', function (e) {
     e.preventDefault();
     var target = $(this);

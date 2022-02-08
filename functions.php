@@ -1,4 +1,6 @@
 <?php
+define('THEMEURI',get_template_directory_uri() . '/');
+
 /*-------------------------------------
   Custom client login, link and title.
 ---------------------------------------*/

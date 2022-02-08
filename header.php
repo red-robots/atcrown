@@ -33,6 +33,7 @@
 
       gtag('config', 'UA-132819498-1');
     </script>
+    <script>var assets = '<?php echo  THEMEURI . "assets/"?>'; </script>
   </head>
 <body <?php body_class();?>>
   <div class="hfeed page">
