@@ -108,6 +108,10 @@ function atc10k_enqueue_styles() {
   wp_enqueue_style('jquery-ui');
 
   wp_enqueue_script( 
+    'bellaworks-pluginsjs', get_template_directory_uri() . '/assets/js/plugins.min.js', array(), '20220902', true 
+  );
+
+  wp_enqueue_script( 
     'bellaworks-customjs', get_template_directory_uri() . '/assets/js/custom.js', array(), '20220127', true 
   );
 
