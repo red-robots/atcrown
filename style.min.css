@@ -506,12 +506,17 @@ body.body--scroll-top .page-header__inner--desktop .page-header__logo{height:58p
 #home-upcoming-events.home-quote{padding-left:0;padding-right:0}
 #home-upcoming-events.home-quote .wrapper{max-width:1200px;width:100%}
 #home-upcoming-events.home-quote .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-#home-upcoming-events.home-quote .event{text-align:center;width:100%;padding:15px}
+#home-upcoming-events.home-quote .event{text-align:center;width:100%;padding:15px;position:relative}
+#home-upcoming-events.home-quote .event:first-child:before{display:none}
 #home-upcoming-events.home-quote .eventLink{text-decoration:none;color:#fff}
 #home-upcoming-events.home-quote .date{margin-bottom:5px}
 #home-upcoming-events.home-quote .title{font-size:1.7em;font-weight:600;line-height:1.2}
 #home-upcoming-events.home-quote .date,#home-upcoming-events.home-quote .title{-webkit-transition:all ease .3s;transition:all ease .3s}
 #home-upcoming-events.home-quote a.eventLink:hover .date,#home-upcoming-events.home-quote a.eventLink:hover .title{color:#df3a3e}
+#home-upcoming-events.home-quote a.eventLink:hover .event-button .ebtn{border-color:#df3a3e;background:#df3a3e;color:#fff}
+#home-upcoming-events.home-quote .event-button{display:block;width:100%}
+#home-upcoming-events.home-quote .event-button .ebtn{display:inline-block;text-decoration:none;border:1px solid #fff;padding:6px 15px;border-radius:100px;color:#fff;font-size:14px;line-height:1.1;margin-top:20px;-webkit-transition:all ease .2s;transition:all ease .2s}
+#home-upcoming-events.home-quote .event-button .ebtn:hover{border-color:#df3a3e;background:#df3a3e;color:#fff}
 .sponsor-list-small{padding-bottom:0 !important}
 .sponsor-list-small__list{text-align:center}
 .sponsor-list-small__list a.sponsor-list-small__sponsor{display:inline-block}
@@ -651,6 +656,7 @@ body.body--scroll-top .page-header__inner--desktop .page-header__logo{height:58p
 .subpage-header__inner{margin-left:auto;margin-right:auto;max-width:740px}
 }@media(min-width:820px){.sponsors-section .sponsor-logo{width:25%}
 #home-upcoming-events.home-quote .event{width:33.33%}
+#home-upcoming-events.home-quote .event:before{content:"";display:block;width:2px;height:85%;background:#fff;position:absolute;top:50%;left:-2px;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
 .wp-block-embed{padding:0}
 }@media(min-width:850px){.contactform{margin-left:auto;margin-right:auto;max-width:850px}
 }@media(min-width:930px){.faqlist{margin-left:auto;margin-right:auto;max-width:930px}

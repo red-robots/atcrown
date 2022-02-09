@@ -278,8 +278,25 @@ body.body--scroll-top {
     text-align: center;
     width: 100%;
     padding: 15px;
+    position: relative;
     @include tab {
       width: 33.33%;
+      &:before {
+        content:"";
+        display: block;
+        width: 2px;
+        height: 85%;
+        background: #FFF;
+        position: absolute;
+        top: 50%;
+        left: -2px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  .event:first-child {
+    &:before {
+      display: none;
     }
   }
   .eventLink {
@@ -300,6 +317,32 @@ body.body--scroll-top {
   a.eventLink:hover {
     .date, .title {
       color: #df3a3e;
+    }
+    .event-button .ebtn {
+      border-color: $primary;
+      background: $primary;
+      color: #FFF;
+    }
+  }
+  .event-button {
+    display: block;
+    width: 100%;
+    .ebtn {
+      display: inline-block;
+      text-decoration: none;
+      border: 1px solid #FFF;
+      padding: 6px 15px;
+      border-radius: 100px;
+      color: #FFF;
+      font-size: 14px;
+      line-height: 1.1;
+      margin-top: 20px;
+      transition: all ease .2s;
+      &:hover {
+        border-color: $primary;
+        background: $primary;
+        color: #FFF;
+      }
     }
   }
 }

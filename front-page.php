@@ -72,7 +72,16 @@ get_header();
                 <?php if ($title) { ?>
                   <div class="title"><?php echo $title ?></div>
                 <?php } ?>
+
+                <?php if ($bText && $bLink) { ?>
+                <span class="event-button">
+                  <span class="ebtn"><?php echo $bText ?></span>
+                </span> 
+                <?php } ?>
+
                 <?php echo $closeLink ?>
+
+                
               </div> 
            <?php } ?>
           <?php } ?>
