@@ -503,10 +503,10 @@ body.body--scroll-top .page-header__inner--desktop .page-header__logo{height:58p
 #sponsor-details-popup #close-info:before{-webkit-transform:rotate(45deg);transform:rotate(45deg)}
 #sponsor-details-popup #close-info:after{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 #sponsor-details-popup #close-info:hover{opacity:1}
-#home-upcoming-events.home-quote{padding-left:0;padding-right:0}
+#home-upcoming-events.home-quote{padding-left:0;padding-right:0;background-size:cover;background-position:center}
 #home-upcoming-events.home-quote .wrapper{max-width:1200px;width:100%}
 #home-upcoming-events.home-quote .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-#home-upcoming-events.home-quote .event{text-align:center;width:100%;padding:15px;position:relative}
+#home-upcoming-events.home-quote .event{text-align:center;width:100%;padding:15px;position:relative;margin-top:10px;margin-bottom:10px}
 #home-upcoming-events.home-quote .event:first-child:before{display:none}
 #home-upcoming-events.home-quote .eventLink{text-decoration:none;color:#fff}
 #home-upcoming-events.home-quote .date{margin-bottom:5px}
@@ -520,13 +520,13 @@ body.body--scroll-top .page-header__inner--desktop .page-header__logo{height:58p
 .sponsor-list-small{padding-bottom:0 !important}
 .sponsor-list-small__list{text-align:center}
 .sponsor-list-small__list a.sponsor-list-small__sponsor{display:inline-block}
-.sponsors-carousel{max-width:1000px;width:100%;margin:0 auto;position:relative}
-.sponsors-carousel .owl-item a{display:block;width:100%;text-align:center}
+.sponsors-carousel{max-width:1200px;width:100%;margin:0 auto;position:relative}
+.sponsors-carousel .owl-item a{display:block;width:100%;text-align:center;padding:10px 30px}
 .sponsors-carousel .owl-item a img{width:90%;height:auto}
 .sponsors-carousel .owl-prev,.sponsors-carousel .owl-next{position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);font-size:40px !important;-webkit-transition:all ease .3s;transition:all ease .3s;opacity:.3}
 .sponsors-carousel .owl-prev:hover,.sponsors-carousel .owl-next:hover{opacity:1}
-.sponsors-carousel .owl-prev{left:-3vw}
-.sponsors-carousel .owl-next{right:-3vw}
+.sponsors-carousel .owl-prev{left:-2vw}
+.sponsors-carousel .owl-next{right:-2vw}
 .wp-block-embed{text-align:center;padding:0 15px}
 .wp-block-embed .embed-youtube{display:block;max-width:640px;width:100%;margin:0 auto;position:relative;background-color:#000}
 .wp-block-embed .embed-youtube iframe{position:absolute;top:0;left:0;z-index:100;width:100% !important;height:100% !important}
@@ -655,8 +655,7 @@ body.body--scroll-top .page-header__inner--desktop .page-header__logo{height:58p
 }@media(min-width:740px){.single-content .entry-content__body{margin-left:auto;margin-right:auto;max-width:740px}
 .subpage-header__inner{margin-left:auto;margin-right:auto;max-width:740px}
 }@media(min-width:820px){.sponsors-section .sponsor-logo{width:25%}
-#home-upcoming-events.home-quote .event{width:33.33%}
-#home-upcoming-events.home-quote .event:before{content:"";display:block;width:2px;height:85%;background:#fff;position:absolute;top:50%;left:-2px;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
+#home-upcoming-events.home-quote .event{width:33.33%;margin-top:0;margin-bottom:0}
 .wp-block-embed{padding:0}
 }@media(min-width:850px){.contactform{margin-left:auto;margin-right:auto;max-width:850px}
 }@media(min-width:930px){.faqlist{margin-left:auto;margin-right:auto;max-width:930px}

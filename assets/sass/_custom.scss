@@ -266,6 +266,8 @@ body.body--scroll-top {
 #home-upcoming-events.home-quote {
   padding-left: 0;
   padding-right: 0;
+  background-size: cover;
+  background-position: center;
   .wrapper {
     max-width: 1200px;
     width: 100%;
@@ -279,19 +281,23 @@ body.body--scroll-top {
     width: 100%;
     padding: 15px;
     position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
     @include tab {
       width: 33.33%;
-      &:before {
-        content:"";
-        display: block;
-        width: 2px;
-        height: 85%;
-        background: #FFF;
-        position: absolute;
-        top: 50%;
-        left: -2px;
-        transform: translateY(-50%);
-      }
+      margin-top: 0;
+      margin-bottom: 0;
+      // &:before {
+      //   content:"";
+      //   display: block;
+      //   width: 2px;
+      //   height: 85%;
+      //   background: #FFF;
+      //   position: absolute;
+      //   top: 50%;
+      //   left: -2px;
+      //   transform: translateY(-50%);
+      // }
     }
   }
   .event:first-child {
@@ -358,7 +364,7 @@ body.body--scroll-top {
 }
 
 .sponsors-carousel {
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -367,6 +373,7 @@ body.body--scroll-top {
       display: block;
       width: 100%;
       text-align: center;
+      padding: 10px 30px;
       img {
         width: 90%;
         height: auto;
@@ -385,10 +392,10 @@ body.body--scroll-top {
     }
   }
   .owl-prev {
-    left: -3vw;
+    left: -2vw;
   }
   .owl-next {
-    right: -3vw;
+    right: -2vw;
   }
   @media screen and (max-width:768px) {
     padding-right: 3vw;

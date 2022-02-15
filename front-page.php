@@ -133,9 +133,9 @@ get_header();
             $img = get_field('logo_bw',$pid);
             if($img) { ?>
             <a href="<?php echo $brandLink ?>" target="_blank" class="sponsor-list-small__sponsor sponsor">
-              <header class="sponsor__header">
+              <span class="sponsor__header">
                 <img width="<?php echo $img['width'] ?>" height="<?php echo $img['height'] ?>" src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>">
-              </header>
+              </span>
             </a>
             <?php } ?>
           <?php } ?>
@@ -151,9 +151,9 @@ get_header();
             $img = get_field('logo_bw',$pid);
             if($img) { ?>
             <a href="<?php echo $brandLink ?>" target="_blank" class="sponsor-list-small__sponsor sponsor">
-              <header class="sponsor__header">
+              <span class="sponsor__header">
                 <img width="<?php echo $img['width'] ?>" height="<?php echo $img['height'] ?>" src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>">
-              </header>
+              </span>
             </a>
             <?php } ?>
           <?php } ?>

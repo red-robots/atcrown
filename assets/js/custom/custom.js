@@ -64,7 +64,7 @@ jQuery(document).ready(function ($) {
   $('#sponsors-slider').owlCarousel({
     loop:true,
     autoplay:true,
-    margin:10,
+    margin:20,
     nav:true,
     responsive:{
         0:{
