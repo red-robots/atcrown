@@ -377,6 +377,9 @@ body.body--scroll-top {
       img {
         width: 90%;
         height: auto;
+        @media screen and (max-width: 768px) {
+          width: 100%!important;
+        }
       }
     }
   }
@@ -397,6 +400,12 @@ body.body--scroll-top {
   .owl-next {
     right: -2vw;
   }
+  .sponsor-list-small__sponsor.sponsor {
+    max-height: unset;
+    img {
+      max-height: unset;
+    }
+  } 
   @media screen and (max-width:768px) {
     padding-right: 3vw;
     padding-left: 3vw;

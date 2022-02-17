@@ -527,6 +527,8 @@ body.body--scroll-top .page-header__inner--desktop .page-header__logo{height:58p
 .sponsors-carousel .owl-prev:hover,.sponsors-carousel .owl-next:hover{opacity:1}
 .sponsors-carousel .owl-prev{left:-2vw}
 .sponsors-carousel .owl-next{right:-2vw}
+.sponsors-carousel .sponsor-list-small__sponsor.sponsor{max-height:unset}
+.sponsors-carousel .sponsor-list-small__sponsor.sponsor img{max-height:unset}
 .wp-block-embed{text-align:center;padding:0 15px}
 .wp-block-embed .embed-youtube{display:block;max-width:640px;width:100%;margin:0 auto;position:relative;background-color:#000}
 .wp-block-embed .embed-youtube iframe{position:absolute;top:0;left:0;z-index:100;width:100% !important;height:100% !important}
@@ -686,7 +688,8 @@ body.body--scroll-top .page-header__inner--desktop .page-header__logo{height:58p
 .post-list{display:block;width:100%}
 .post-list__thumbnail{max-width:100%;width:100%}
 .single-content .entry-content__thumbnail{width:calc(100% - 20px);margin:0 auto 20px}
-}@media screen and (max-width:768px){.sponsors-carousel{padding-right:3vw;padding-left:3vw}
+}@media screen and (max-width:768px){.sponsors-carousel .owl-item a img{width:100% !important}
+.sponsors-carousel{padding-right:3vw;padding-left:3vw}
 .sponsors-carousel .owl-prev{left:0}
 .sponsors-carousel .owl-next{right:0}
 .sponsors-carousel .owl-item a img{width:80%;height:auto}
