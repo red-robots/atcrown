@@ -521,14 +521,17 @@ body.body--scroll-top .page-header__inner--desktop .page-header__logo{height:58p
 .sponsor-list-small__list{text-align:center}
 .sponsor-list-small__list a.sponsor-list-small__sponsor{display:inline-block}
 .sponsors-carousel{max-width:1200px;width:100%;margin:0 auto;position:relative}
-.sponsors-carousel .owl-item a{display:block;width:100%;text-align:center;padding:10px 30px}
-.sponsors-carousel .owl-item a img{width:90%;height:auto}
+.sponsors-carousel .owl-carousel .owl-stage{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.sponsors-carousel .owl-item{padding:10px 30px}
+.sponsors-carousel .owl-item a.sponsor-list-small__sponsor.sponsor{display:block;width:100%;text-align:center;padding:0;max-height:unset;position:relative;float:left}
+.sponsors-carousel .owl-item a.sponsor-list-small__sponsor.sponsor span{display:block;width:100%;float:left}
+.sponsors-carousel .owl-item a.sponsor-list-small__sponsor.sponsor span.has-logo{background-size:100%;background-position:center;background-repeat:no-repeat}
+.sponsors-carousel .owl-item a.sponsor-list-small__sponsor.sponsor img.resizer{width:100% !important;height:auto;float:left}
+.sponsors-carousel .owl-item a.sponsor-list-small__sponsor.sponsor img{width:90%;height:auto;max-height:unset}
 .sponsors-carousel .owl-prev,.sponsors-carousel .owl-next{position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);font-size:40px !important;-webkit-transition:all ease .3s;transition:all ease .3s;opacity:.3}
 .sponsors-carousel .owl-prev:hover,.sponsors-carousel .owl-next:hover{opacity:1}
 .sponsors-carousel .owl-prev{left:-2vw}
 .sponsors-carousel .owl-next{right:-2vw}
-.sponsors-carousel .sponsor-list-small__sponsor.sponsor{max-height:unset}
-.sponsors-carousel .sponsor-list-small__sponsor.sponsor img{max-height:unset}
 .wp-block-embed{text-align:center;padding:0 15px}
 .wp-block-embed .embed-youtube{display:block;max-width:640px;width:100%;margin:0 auto;position:relative;background-color:#000}
 .wp-block-embed .embed-youtube iframe{position:absolute;top:0;left:0;z-index:100;width:100% !important;height:100% !important}
@@ -688,7 +691,7 @@ body.body--scroll-top .page-header__inner--desktop .page-header__logo{height:58p
 .post-list{display:block;width:100%}
 .post-list__thumbnail{max-width:100%;width:100%}
 .single-content .entry-content__thumbnail{width:calc(100% - 20px);margin:0 auto 20px}
-}@media screen and (max-width:768px){.sponsors-carousel .owl-item a img{width:100% !important}
+}@media screen and (max-width:768px){.sponsors-carousel .owl-item a.sponsor-list-small__sponsor.sponsor img{width:100% !important}
 .sponsors-carousel{padding-right:3vw;padding-left:3vw}
 .sponsors-carousel .owl-prev{left:0}
 .sponsors-carousel .owl-next{right:0}

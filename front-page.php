@@ -123,42 +123,25 @@ get_header();
           ]
         );
         $sponsors = get_posts($args);
-        $show_old_format = false;
-        if($show_old_format) { ?>
-        <div class="sponsor-list-small__list">
-          <?php foreach ($sponsors as $s) { 
-            $pid = $s->ID;
-            $imgLink = get_field("url",$pid);
-            $brandLink = ($imgLink) ? $imgLink : 'javascript:void(0)';
-            $img = get_field('logo_bw',$pid);
-            if($img) { ?>
-            <a href="<?php echo $brandLink ?>" target="_blank" class="sponsor-list-small__sponsor sponsor">
-              <span class="sponsor__header">
-                <img width="<?php echo $img['width'] ?>" height="<?php echo $img['height'] ?>" src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>">
-              </span>
-            </a>
-            <?php } ?>
-          <?php } ?>
-        </div>
-        <?php } ?>
+        ?>
 
-      <div class="sponsors-carousel">
-        <div id="sponsors-slider" class="owl-carousel owl-theme">
-          <?php foreach ($sponsors as $s) { 
-            $pid = $s->ID;
-            $imgLink = get_field("url",$pid);
-            $brandLink = ($imgLink) ? $imgLink : 'javascript:void(0)';
-            $img = get_field('logo_bw',$pid);
-            if($img) { ?>
-            <a href="<?php echo $brandLink ?>" target="_blank" class="sponsor-list-small__sponsor sponsor">
-              <span class="sponsor__header">
-                <img width="<?php echo $img['width'] ?>" height="<?php echo $img['height'] ?>" src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>">
-              </span>
-            </a>
+        <div class="sponsors-carousel">
+          <div id="sponsors-slider" class="owl-carousel owl-theme">
+            <?php foreach ($sponsors as $s) { 
+              $pid = $s->ID;
+              $imgLink = get_field("url",$pid);
+              $brandLink = ($imgLink) ? $imgLink : 'javascript:void(0)';
+              $img = get_field('logo_bw',$pid);
+              if($img) { ?>
+              <a href="<?php echo $brandLink ?>" target="_blank" class="sponsor-list-small__sponsor sponsor">
+                <span class="sponsor__header">
+                  <img width="<?php echo $img['width'] ?>" height="<?php echo $img['height'] ?>" src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>">
+                </span>
+              </a>
+              <?php } ?>
             <?php } ?>
-          <?php } ?>
+          </div>
         </div>
-      </div>
 
       <?php } ?>
     </section>
