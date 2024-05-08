@@ -30,6 +30,33 @@
     </div>
 
     <div id="loaderdiv"><div class="loader"><span class="loadtxt">Loading...</span></div></div>
+
+
+    <script type="text/javascript">
+      jQuery(document).ready(function ($) {
+        /* Search Form (Header) */
+        $(document).on("click","#topsearchBtn",function(e){
+          e.preventDefault();
+          $("#topSearchBar form").submit();
+        });
+
+        $(document).on("click","#searchHereBtn",function(e){
+          e.preventDefault();
+          $(this).toggleClass('search-open');
+          $('#topSearchBar').toggleClass('show');
+          $('body').toggleClass('search-form-open');
+          $("input.search-field").focus();
+        });
+
+        $(document).on("click","#closeTopSearch",function(e){
+          e.preventDefault();
+          $('#searchHereBtn').removeClass('search-open');
+          $('#topSearchBar').removeClass('show');
+          $('body').removeClass('search-form-open');
+          //$("input.search-field").val("");
+        });
+      });
+    </script>
     
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>

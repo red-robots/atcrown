@@ -1,6 +1,15 @@
 <?php
 define('THEMEURI',get_template_directory_uri() . '/');
 
+
+
+add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);
+function add_search_form($items, $args) {
+if( $args->theme_location == 'main-menu' )
+        $items .= '<li id="searchHereBtn" class="search-icon "><i class="fas fa-search"></i></li>';
+        return $items;
+}
+
 /*-------------------------------------
   Custom client login, link and title.
 ---------------------------------------*/
