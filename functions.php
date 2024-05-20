@@ -1,7 +1,11 @@
 <?php
 define('THEMEURI',get_template_directory_uri() . '/');
 
+if( function_exists('acf_add_options_page') ) {
 
+    acf_add_options_page();
+
+}
 
 add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);
 function add_search_form($items, $args) {
