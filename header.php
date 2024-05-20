@@ -180,9 +180,15 @@
 
   </head>
 <body <?php body_class();?>>
+<?php 
+  $top_message = get_field('topMessage','option'); 
+  $top_visibility = get_field('announcement_visibility','option'); 
+?>
   <div class="hfeed page">
     <header class="page__header  page-header" role="banner">
-
+      <?php if( (is_front_page() || is_home()) && $top_visibility=='on' ) { ?>
+        <div class="topMessage"><div class="inner"><?php echo $top_message; ?></div></div>
+      <?php } ?>
       <div id="topSearchBar" class="top-search-bar">
         <div class="wrapper">
           <div class="form-wrapper">
