@@ -211,7 +211,7 @@
           <a class="page-header__home" href="/">
             <img
               class="page-header__logo"
-              src="<?=get_theme_file_uri('/assets/images/logo/atc10k-desktop.svg')?>"
+              src="<?=get_theme_file_uri('/assets/images/logo/atc-logo-2024.png')?>"
               alt="Around the Crown 10K logo"
             />
           </a>

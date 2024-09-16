@@ -20,7 +20,8 @@
             'menu_class' => 'nav__list nav__list--root',
           ]); ?>
           <div class="page-footer__copyright">
-            <?= sprintf( __( '%1$s %2$s %3$s. All Rights Reserved.', 'blankslate' ), '&copy;', date( 'Y' ), esc_html( get_bloginfo( 'name' ) ) ); ?>
+            <?php // echo sprintf( __( '%1$s %2$s %3$s. All Rights Reserved.', 'blankslate' ), '&copy;', date( 'Y' ), esc_html( get_bloginfo( 'name' ) ) ); ?>
+            <?php echo '&copy; 2019 - '.date( 'Y' ); ?>. All rights reserved. Trademarks, service marks, and all graphical elements, including the look and feel, are distinctive and protected trademarks or trade dress of Crown Collective LLC or its licensors. No licenses or rights are granted to you by implication or otherwise.  Crown Collective LLC or its licensors reserve all other rights.
           </div>
           <div class="page-footer__social-links  social-links">
             <?= atc10k_social_media_nav() ?>
