@@ -242,7 +242,8 @@
           <img
             class="page-header__logo"
             alt="Around the Crown 10K logo"
-            src="<?=get_theme_file_uri('/assets/images/logo/atc-mobile-2024.png')?>" />
+            src="<?=get_theme_file_uri('/assets/images/logo/atc-mobile-2024.png')?>" 
+            />
         </a>
         <button class="page-header__hamburger js-mobile-nav-control">
           <span class="hamburger-icon" aria-label="Open Menu"></span>
@@ -257,6 +258,7 @@
                   class="page-header__logo"
                   alt="Around the Crown 10K logo"
                   src="<?=get_theme_file_uri('/assets/images/logo/atc-mobile-2024.png')?>"
+                  width="200px"
                 />
               </a>
             <button class="mobile-nav__hamburger  page-header__hamburger js-mobile-nav-control">
