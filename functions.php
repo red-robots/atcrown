@@ -13,7 +13,7 @@ if( $args->theme_location == 'main-menu' )
         $items .= '<li id="searchHereBtn" class="search-icon "><i class="fas fa-search"></i></li>';
         return $items;
 }
-
+add_theme_support( 'post-thumbnails' );
 /*-------------------------------------
   Custom client login, link and title.
 ---------------------------------------*/
